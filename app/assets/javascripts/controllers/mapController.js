@@ -2,6 +2,8 @@ app.controller("MapCtrl", ["$scope", "$stateParams", "Restangular", function($sc
 
   var errorMsg = "No Nearby Food Trucks Open Today";
 
+  // var
+
   //requesting info from backend
   var getCarts = function(query){
     Restangular.one("food_trucks").get({'address': query}).then(function(success){
@@ -28,7 +30,7 @@ app.controller("MapCtrl", ["$scope", "$stateParams", "Restangular", function($sc
   };
 
   //initial page load
-  getCarts($stateParams.query);
+  // getCarts($stateParams.query);
 
   $scope.status = {text : "Loading..."};
 
@@ -53,7 +55,8 @@ app.controller("MapCtrl", ["$scope", "$stateParams", "Restangular", function($sc
           this.show = false;
       },
       options: {}
-    }
+    },
+    options: {icon: 'http://www.nbkidsfest.com/images/foodtruckicon.png', scaledSize: '50%'}
   };
 
   $scope.newQuery = function(){
